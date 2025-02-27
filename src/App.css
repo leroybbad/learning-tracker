@@ -1,0 +1,287 @@
+/* BEGIN ORIGINAL CODE
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+END OG CODE */
+
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 100%;
+  position: relative;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  padding-bottom: 80px; /* Space for the record button */
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+.section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.today-goal {
+  background-color: #e8f5e9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #4caf50;
+}
+
+.accordion {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  background-color: #f9f9f9;
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.accordion-content {
+  padding: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.completed-item {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.completed-item:last-child {
+  border-bottom: none;
+}
+
+.completed-date {
+  font-size: 0.8em;
+  color: #777;
+}
+
+.completed-time {
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.completed-skill {
+  font-weight: bold;
+}
+
+.record-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.record-button:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.sheet-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.sheet-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sheet {
+  background-color: white;
+  border-radius: 16px 16px 0 0;
+  padding: 20px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+
+.sheet-overlay.active .sheet {
+  transform: translateY(0);
+}
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sheet-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.button-primary {
+  background-color: #4caf50;
+  color: white;
+}
+
+.button-secondary {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.metrics-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.metric-card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.metric-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4caf50;
+  margin: 10px 0;
+}
+
+.metric-label {
+  font-size: 14px;
+  color: #777;
+}
+
+.progress-bar-container {
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 4px;
+}
