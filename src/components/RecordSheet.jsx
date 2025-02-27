@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useLearning } from '../contexts/LearningContext.jsx';
+import { useLearning } from '../contexts/LearningContext';
+import { triggerParticleEffect } from '../utils/particleEffects';
 
 const RecordSheet = ({ isOpen, onClose }) => {
   const { addLearningRecord, learningData } = useLearning();
@@ -25,6 +26,11 @@ const RecordSheet = ({ isOpen, onClose }) => {
     
     // Close sheet
     onClose();
+    
+    // Trigger particle effect with custom message
+    setTimeout(() => {
+      triggerParticleEffect("LEVEL UP!");
+    }, 300); // Small delay to let the sheet close first
   };
 
   return (
