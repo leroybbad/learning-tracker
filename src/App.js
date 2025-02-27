@@ -21,6 +21,7 @@ function App() {
 
   return (
     <LearningProvider>
+      {/* Main content container */}
       <div className="app">
         <div className="container">
           <Header />
@@ -28,9 +29,14 @@ function App() {
           <UpcomingSteps />
           <CompletedSteps />
         </div>
-        <RecordButton onClick={openRecordSheet} />
-        <RecordSheet isOpen={isRecordSheetOpen} onClose={closeRecordSheet} />
       </div>
+      
+      {/* Button positioned outside the main container */}
+      <div className="floating-button-container">
+        <RecordButton onClick={openRecordSheet} />
+      </div>
+      
+      <RecordSheet isOpen={isRecordSheetOpen} onClose={closeRecordSheet} />
     </LearningProvider>
   );
 }
