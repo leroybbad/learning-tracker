@@ -28,9 +28,9 @@ function App() {
           <UpcomingSteps />
           <CompletedSteps />
         </div>
-        <RecordButton onClick={openRecordSheet} />
-        <RecordSheet isOpen={isRecordSheetOpen} onClose={closeRecordSheet} />
       </div>
+      <RecordButton onClick={openRecordSheet} />
+      <RecordSheet isOpen={isRecordSheetOpen} onClose={closeRecordSheet} />
     </LearningProvider>
   );
 }
