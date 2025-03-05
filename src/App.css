@@ -178,6 +178,10 @@ h1 {
 }
 
 .record-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--button-gradient);
   color: white;
   border: none;
@@ -194,10 +198,11 @@ h1 {
   max-width: 300px;
   pointer-events: auto; /* This ensures the button is clickable */
   animation: glow 2s infinite;
+  z-index: 1000;
 }
 
 .record-button:hover {
-  transform: scale(1.05);
+  transform: translateX(-50%) scale(1.05);
   box-shadow: 0 0 25px rgba(255, 0, 255, 0.9), 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
